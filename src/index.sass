@@ -1,3 +1,19 @@
-.two-part-container
+$side-to-main-ratio: 5
+
+*
+    border: 0
+    margin: 0
+    padding: 0
+body
+    width: 100vw
+    height: 100vh
+
+.split-container
+    @extend body
     display: flex
     
+.side-menu
+    flex-grow: 1
+
+.main-content
+    flex-grow: $side-to-main-ratio
