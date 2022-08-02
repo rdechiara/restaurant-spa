@@ -1,4 +1,6 @@
-$side-to-main-ratio: 5
+$side-to-main-ratio: 15
+$logo-to-menu-ratio: 4
+$nav-item-fz: 1.5rem
 
 *
     border: 0
@@ -14,6 +16,49 @@ body
     
 .side-menu
     flex-grow: 1
+    display: flex
+    flex-direction: column
+
+.logo-wrapper
+    flex-grow: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    font-family: 'Times New Roman', Georgia, 'Times New Roman', Times, serif
+
+
+.menu-wrapper
+    flex-grow: $logo-to-menu-ratio
+    
+.menu-list
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    list-style-type: none
+    text-transform: uppercase
+
+.nav-item
+    font-size: $nav-item-fz
+    font-family: 'Times New Roman', Georgia, 'Times New Roman', Times, serif
+
+.nav-link
+    text-decoration: none
+    color: black
+
+.nav-link-active
+    @extend .nav-link
+    font-size: $nav-item-fz * 1.2
+    text-decoration: underline
+    font-weight: bold
+.heading
+    font-size: 2.5rem
+    font-family: 'Times New Roman', Georgia, 'Times New Roman', Times, serif
 
 .main-content
     flex-grow: $side-to-main-ratio
+    flex-shrink: 0
+    background-image: url('../assets/bg.jpg')
+    background-repeat: no-repeat
+    background-size: cover
