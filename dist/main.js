@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log('Testing if configuration is working well...');\n\n//# sourceURL=webpack://restaurant-spa/./src/index.js?");
+eval("const app = (function (){\n    let menu = null;\n    let target = null;\n\n    function setTargetMenu(id)\n    {\n        menu = document.getElementById(id);\n    }\n    function setTarget(id)\n    {\n        target = document.getElementById(id);\n    }\n    const renderPage = (event) =>\n    {\n        target.style.background = 'none';\n        target.innerHTML = ``;\n        target.textContent = `PAGE RENDERED!`;\n        const links = [...document.querySelectorAll('a')];\n\n       links.forEach((link) =>{\n        link.classList.remove('nav-link-active');\n       });\n        event.target.classList.add('nav-link-active');\n    }\n\n    function setupListeners()\n    {\n       const links = [...document.querySelectorAll('a')];\n\n       links.forEach((link) =>{\n        link.onclick = renderPage;\n       });\n    }\n\n    setupListeners();\n    return {setTargetMenu, setTarget};\n})();\n\napp.setTargetMenu('menu-list');\napp.setTarget('main');\n\n//# sourceURL=webpack://restaurant-spa/./src/index.js?");
 
 /***/ })
 
