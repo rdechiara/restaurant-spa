@@ -1,3 +1,8 @@
+import renderHome from './home';
+import renderWines from './vini';
+import renderIceCream from './ice-cream';
+import renderBeverage from './beverage';
+import renderInfo from './info';
 const app = (function (){
     let menu = null;
     let target = null;
@@ -12,6 +17,30 @@ const app = (function (){
     }
     const renderPage = (event) =>
     {
+        const itemClicked = event.target.id;
+
+        switch(itemClicked)
+        {
+            case 'home':
+                renderHome();
+                break;
+            case 'wines':
+                renderWines();
+                break;
+            case 'ice-cream':
+                renderIceCream();
+                break;
+            case 'beverage':
+                renderBeverage();
+                break;
+            case 'contact-info':
+                renderInfo();
+                break;
+            default:
+                console.log('Unexpected nav menu item selected!');
+                break;
+        }
+        console.log(event.target);
         target.style.background = 'none';
         target.innerHTML = ``;
         target.textContent = `PAGE RENDERED!`;
