@@ -46,7 +46,7 @@ body, .split-container {
   font-family: "Times New Roman", Georgia, "Times New Roman", Times, serif;
 }
 
-.nav-link, .nav-link-active {
+.nav-link, .nav-link-active, a.nav-link-active:visited, a.nav-link:visited {
   text-decoration: none;
   color: black;
 }
